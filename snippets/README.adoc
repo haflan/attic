@@ -1,0 +1,2 @@
+I'm still making snippets now and then,
+but everything I actually use is committed to my https://yadm.io/[YADM] repo.

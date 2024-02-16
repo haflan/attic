@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox = "0 0 500 500">
+	<rect x="24.0" y="36" width="102.0" height="36" fill="white" stroke="black"></rect>
+	<text x="39.0" y="51" font-family="Arial" font-size="12" fill="black">    Numbr 1     </text>
+	<text x="39.0" y="63" font-family="Arial" font-size="12" fill="black">                </text>
+
+	<rect x="90.0" y="108" width="132.0" height="24" fill="white" stroke="black"></rect>
+	<text x="105.0" y="123" font-family="Arial" font-size="12" fill="black">       A BLOCK       </text>
+
+	<rect x="0.0" y="156" width="102.0" height="24" fill="white" stroke="black"></rect>
+	<text x="15.0" y="171" font-family="Arial" font-size="12" fill="black">    Block 1     </text>
+
+	<rect x="114.0" y="156" width="138.0" height="24" fill="white" stroke="black"></rect>
+	<text x="129.0" y="171" font-family="Arial" font-size="12" fill="black">   Additional block   </text>
+
+	<rect x="342.0" y="168" width="126.0" height="48" fill="white" stroke="black"></rect>
+	<text x="357.0" y="183" font-family="Arial" font-size="12" fill="black">                    </text>
+	<text x="357.0" y="195" font-family="Arial" font-size="12" fill="black">    BIG BOX BOYY    </text>
+	<text x="357.0" y="207" font-family="Arial" font-size="12" fill="black">                    </text>
+
+	<rect x="114.0" y="204" width="138.0" height="24" fill="white" stroke="black"></rect>
+	<text x="129.0" y="219" font-family="Arial" font-size="12" fill="black">     Second block     </text>
+
+	<rect x="114.0" y="228" width="138.0" height="120" fill="white" stroke="black"></rect>
+	<text x="129.0" y="243" font-family="Arial" font-size="12" fill="black">                      </text>
+	<text x="129.0" y="255" font-family="Arial" font-size="12" fill="black"> - List of stuff here </text>
+	<text x="129.0" y="267" font-family="Arial" font-size="12" fill="black"> - Good stuff too,    </text>
+	<text x="129.0" y="279" font-family="Arial" font-size="12" fill="black">   I'd say            </text>
+	<text x="129.0" y="291" font-family="Arial" font-size="12" fill="black">                      </text>
+	<text x="129.0" y="303" font-family="Arial" font-size="12" fill="black">                      </text>
+	<text x="129.0" y="315" font-family="Arial" font-size="12" fill="black">                      </text>
+	<text x="129.0" y="327" font-family="Arial" font-size="12" fill="black">                      </text>
+	<text x="129.0" y="339" font-family="Arial" font-size="12" fill="black">                      </text>
+
+	<rect x="6.0" y="216" width="18.0" height="72" fill="white" stroke="black"></rect>
+	<text x="21.0" y="231" font-family="Arial" font-size="12" fill="black">  </text>
+	<text x="21.0" y="243" font-family="Arial" font-size="12" fill="black">  </text>
+	<text x="21.0" y="255" font-family="Arial" font-size="12" fill="black">  </text>
+	<text x="21.0" y="267" font-family="Arial" font-size="12" fill="black">  </text>
+	<text x="21.0" y="279" font-family="Arial" font-size="12" fill="black">  </text>
+
+	<rect x="198.0" y="372" width="96.0" height="24" fill="white" stroke="black"></rect>
+	<text x="213.0" y="387" font-family="Arial" font-size="12" fill="black">   vert_test   </text>
+
+	<rect x="0.0" y="396" width="144.0" height="24" fill="white" stroke="black"></rect>
+	<text x="15.0" y="411" font-family="Arial" font-size="12" fill="black">         SEC 1         </text>
+
+	<rect x="0.0" y="420" width="144.0" height="24" fill="white" stroke="black"></rect>
+	<text x="15.0" y="435" font-family="Arial" font-size="12" fill="black">         SEC 2         </text>
+
+	<rect x="0.0" y="444" width="144.0" height="24" fill="white" stroke="black"></rect>
+	<text x="15.0" y="459" font-family="Arial" font-size="12" fill="black">         SEC 3         </text>
+
+	<rect x="198.0" y="432" width="96.0" height="24" fill="white" stroke="black"></rect>
+	<text x="213.0" y="447" font-family="Arial" font-size="12" fill="black">               </text>
+
+	<line x1="126.0" y1="48" x2="162.0" y2="48" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="162.0" y1="48" x2="162.0" y2="108" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="42.0" y1="72" x2="42.0" y2="156" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="48.0" y1="72" x2="48.0" y2="156" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="48.0,155 42.0,144 54.0,144" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="108.0" y1="72" x2="108.0" y2="108" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="108.0,107 102.0,96 114.0,96" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="36.0" y1="72" x2="36.0" y2="156" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="36.0,71 30.0,84 42.0,84" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="72.0" y1="120" x2="72.0" y2="156" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="72.0" y1="120" x2="90.0" y2="120" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="222.0" y1="120" x2="240.0" y2="120" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="240.0" y1="120" x2="240.0" y2="156" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="102.0" y1="168" x2="114.0" y2="168" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="252.0" y1="168" x2="282.0" y2="168" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="282.0" y1="168" x2="282.0" y2="192" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="282.0" y1="192" x2="282.0" y2="216" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="252.0" y1="216" x2="282.0" y2="216" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="282.0" y1="192" x2="342.0" y2="192" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="336.0,203 330.0,192 342.0,192" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="48.0" y1="180" x2="48.0" y2="216" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="48.0" y1="216" x2="48.0" y2="240" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="24.0" y1="240" x2="48.0" y2="240" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="30.0,251 24.0,240 36.0,240" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="48.0" y1="216" x2="114.0" y2="216" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="108.0,227 102.0,216 114.0,216" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="180.0" y1="180" x2="180.0" y2="204" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="372.0" y1="216" x2="372.0" y2="264" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="252.0" y1="264" x2="372.0" y2="264" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="258.0,275 252.0,264 264.0,264" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="24.0" y1="228" x2="48.0" y2="228" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="42.0,239 36.0,228 48.0,228" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="24.0" y1="240" x2="36.0" y2="240" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="30.0,251 24.0,240 36.0,240" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="24.0" y1="252" x2="48.0" y2="252" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="30.0,263 24.0,252 36.0,252" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="24.0" y1="264" x2="48.0" y2="264" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="48.0" y1="264" x2="48.0" y2="288" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="48.0" y1="288" x2="48.0" y2="396" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="48.0" y1="288" x2="114.0" y2="288" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="108.0,299 102.0,288 114.0,288" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="30.0,275 24.0,264 36.0,264" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="252.0" y1="264" x2="264.0" y2="264" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="258.0,275 252.0,264 264.0,264" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="228.0" y1="396" x2="228.0" y2="432" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="228.0,431 222.0,420 234.0,420" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="234.0" y1="396" x2="234.0" y2="432" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="222.0" y1="396" x2="222.0" y2="432" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="222.0,395 216.0,408 228.0,408" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<line x1="240.0" y1="396" x2="240.0" y2="432" style="stroke:rgb(0,0,0);stroke-width:1" />
+	<polygon points="240.0,395 234.0,408 246.0,408" style="stroke:rgb(0,0,0);stroke-width:1" />
+</svg>
