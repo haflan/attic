@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+        <script src="https://unpkg.com/vue-router@2.0.0"></script>
+        <!-- include asciidcotor.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/asciidoctor.js/1.5.6/asciidoctor.min.js"></script>
+        <!-- include mathjax.js-->
+        <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+              processEscapes: true
+            },
+            "HTML-CSS": { fonts: ["TeX"] }
+      });
+        </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js' async></script>
+        </script>
+        <style>
+            textarea {
+                width: 100%;
+                height: 100%;
+                display: block;
+                border: 0;
+                /*outline: none;*/
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <button @click="editing = !editing">{{ editing ? "View" : "Edit" }}</button>
+            <span v-show="editing">
+                <button @click="addBold"><b>b</b></button>
+                <button @click="addItalics"><i>i</i></button>
+                ...more tools here
+            </span>
+            <hr>
+            <textarea v-show="editing" v-model="adocSource" ref="ta"></textarea> 
+            <div v-show="!editing" v-html="adocRendered"></div>
+        </div>
+
+        <script type="text/javascript">
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    asciidoctor: null,
+                    adocSource: "",
+                    adocRendered: "",
+                    editing: true
+                },
+                watch: {
+                    editing(on) {
+                        if (!on) {
+                            this.render();
+                        }
+                    },
+                    adocRendered() {
+                        // TODO: This doesn't work now with the Vueified version for some reason
+                        MathJax.Hub.Config({
+                            extensions: ["tex2jax.js"],
+                            jax: ["input/TeX", "output/HTML-CSS"],
+                            tex2jax: {
+                                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                                processEscapes: true
+                            },
+                            "HTML-CSS": { fonts: ["TeX"] }
+                        });
+                        MathJax.Hub.Typeset();
+                        // Thanks: https://docs.mathjax.org/en/v2.7-latest/advanced/typeset.html
+                    }
+                },
+                methods: {
+                    render() {
+                        this.adocRendered = Asciidoctor().convert(this.adocSource,{safe: 'safe'});      
+                    },
+                    addBold() {
+                        this.wrapSelection("*");
+                    },
+                    addItalics() {
+                        this.wrapSelection("_");
+                    },
+                    /**
+                     * wrap text between start and end index in the given symbol
+                     */
+                    wrapSelection(symbol) {
+                        let selStart = this.$refs.ta.selectionStart-1;
+                        let selEnd = this.$refs.ta.selectionEnd-1;
+                        if (selStart === this.adocSource.length-1) {
+                            this.adocSource += symbol + symbol;
+                            // TODO: Set selectionStart between the two stars
+                            return;
+                        }
+                        let pre = this.adocSource.substr(0, selStart+1);
+                        let selected = this.adocSource.substr(selStart+1, selEnd-selStart)
+                        let post = this.adocSource.substr(selEnd+1);
+                        this.adocSource = pre + symbol + selected + symbol + post;
+                    }
+                }
+            });
+            /*
+            function render() {
+                let content = document.getElementById('source').value;
+                console.log(content);
+                const html = asciidoctor.convert(content,{safe: 'safe'});      
+                document.getElementById('target').innerHTML = html;
+            }
+            function update() {
+                render();
+                MathJax.Hub.Config({
+                    extensions: ["tex2jax.js"],
+                    jax: ["input/TeX", "output/HTML-CSS"],
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                        processEscapes: true
+                    },
+                    "HTML-CSS": { fonts: ["TeX"] }
+                });
+                MathJax.Hub.Typeset();
+                // Thanks: https://docs.mathjax.org/en/v2.7-latest/advanced/typeset.html
+            }
+            render();
+            */
+        </script>
+    </body>
+</html>

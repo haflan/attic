@@ -1,0 +1,3 @@
+Avoid NVIM auto-inserting the first complete suggestion:
+
+    set completeopt=menu,noinsert
