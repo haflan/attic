@@ -1,0 +1,2 @@
+Contains old projects and repos that I won't publish in their original form, 
+because they contain accidentally committed executables etc.
