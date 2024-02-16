@@ -1,0 +1,21 @@
+Default keybindings
+--------------------
+[ w / b ]   -   jump to [next / previous] note
+[ n / e ]   -   [increment / decrement] note of selected event by one
+[ N / E ]   -   [increase / decrease] note of selected event by an octave
+[ h / i ]   -   move event [left / right] in time, by <step_length> amount of beats
+[ H / I ]   -   move note to the closest beat (or other predefined measure) to the [left / right] 
+[ s / t ]   -   [decrease / increase] note duration of the selected event
+[ S / T ]   -   [decrease / increase] duration of note by a beat (or other predefined measure)
+[ z / Z ]   -   [next / previous] instrument
+[ m / M ]   -   toggle metronome [beat / 4beats] (OR use m to mute instruments)
+v           -   toggle information view (OR activate visual (copy) mode)
+V           -   edit the parameters shown in info view (or name any changable parameter to edit)
+[ c / C ]   -   enter information manually (note, duration, timestamp etc)
+[ a / A ]   -   add note [after the current line / at the end of file]
+
+You might discover that other keybindings work better, but at least keep all the functionality
+described above. Some other functionality that might be worth adding:
+
+--------------------
+

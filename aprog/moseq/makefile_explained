@@ -1,0 +1,39 @@
+CC=gcc # What compiler to use
+
+EXEC = moseq
+
+CFLAGS=-I. -g -Wall `pkg-config --cflags gtk+-3.0`
+# -I. to include files in the current folder (.)
+# -g for debugging (for instance with gdb). This will add debugging notes to the final binary, so that the debugger knows which parts of the binary is related to which part of the source
+# -W represents warnings. -Wall to show all possible warnings
+# `pkg-config --cflags gtk+-3.0` returns all cflags needed for the GTK+ library
+
+DEPS = audio.h gui.h
+# Dependencies when compiling, mostly .h files
+
+OBJ = moseq.o audio.o gui.o
+# These are the object files 
+
+LIBS = `pkg-config --libs gtk+-3.0` `pkg-config --libs jack` -lsndfile -lm
+# Libraries, found here using pkg-config 
+
+
+all: moseq	# all is the default target for makefiles. 
+			# If no other target is specified, 'make' will execute this.
+			# Here, the default target depends on the moseq file, and will therefore execute the rule below
+	
+moseq: $(OBJ) # This depends on the object (.o) files and will therefore execute the next rule (which does the compilation) before linking the .o-files.
+	$(CC) -o $(EXEC) $(LIBS) $(OBJ) # This may not be the ideal order of the variables, but it seems to work for now.
+
+# The following is a standard rule that compiles '.c' files into '.o' files:
+%.o: %.c $(DEPS)
+	$(CC) -c $(CFLAGS) $< -o $@  
+# Target is any .o file. .o files depend on their corresponding .c files and DEPS (.h).
+	# $@ = The file name of the target of the first rule (the .o file here)
+	# $< = The name of the first prerequisite (the .c file here).
+	# [i] When running make, these comments will be shown, with $@ and $< substituted for the current files.
+
+.PHONY: clean	# To explicitly declare clean as a phony target
+
+clean: 
+	rm *.o $(EXEC) 

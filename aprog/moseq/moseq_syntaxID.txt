@@ -1,0 +1,145 @@
+-------------------------- Info section -------------------------
+sample rate: 44100 kHz
+bpm:           180 
+1 beat = 14700 samples
+Sample lengths:
+ kick = 13025 samples
+ snare = 12340 samples
+ hat = 
+----------------------------- Setup -----------------------------
+samplefolder = ./samples
+kick = kick01.wav
+snare = dasnare.wav 
+
+-------------------------- Composition --------------------------
+
+playfunctions:
+    lin(speed = <playspeed>, start = <sample index to read from>, dur = <duration to play>) 
+            // to play sample linearly
+            // if no arguments: playspeed = 1, start = 0, duration = len(sample)
+    saw(playspeed, startindex, period, duration)
+            // to repeat part of sample, 
+            // for instance to make an instrument out of it.
+    harmonic(
+
+
+One time syntax
+            sample[beatindex<+indexoffset>] = <playfunction>
+            // plays the sample from beatindex (
+            // can also add
+            
+Repetition syntax (:)    
+            sample[firstbeat:beatstep:lastbeat] = <playfunction>
+            // repeats the sample play function 
+            // every beatstep from firstbeat to lastbeat.
+            // beatstep defaults to 1, like in MatLab.
+            // If a sample is longer than the beatstep, 
+            // it will be cut at the next repetition 
+
+--------
+
+bar1{
+    // Bar variables:
+    snareRepIndex = 0.3*len(snare) samples;     // declare a variable
+
+    // Bar composition:
+    kick[0:end];                // This can do the same as the line below?
+    kick[0:end] = lin();        // plays a kick on every beat 
+
+    snare[1] = lin(dur = snareRepIndex);    // plays 0.3 of a snare on beat 1.
+    snare[1+snareRepIndex] = saw(speed = 1, start = snareRepIndex, 100);
+                                            // starts after the 0.3 snare and repeats the following section
+    hat[0:0.5:end] = lin();                 // hat every 1/2 beats
+    hat[1] = lin(speed = -1);
+
+}
+
+track = [bar1(2), bar2(2)];
+
+
+// START WITH:  Implementing basic functionality and lin() function. 
+//              Then move on to more advanced playfunctions.
+
+// Maybe useful stuff:
+typedef enum {beats, seconds, samples} timeformat;
+typedef struct{timeformat tf; ts} seqtime; TBH not sure about this!!
+
+
+ 
+--------
+READ SETUP: 
+    1.  Set the audio sample folders.
+    2.  Read every line on the form <alphanumeric word> = <filename> and load the file if possible. Ignore everything else
+        If successfully loading an audio sample, add it to a list of audio samples.
+        ALSO:
+            typedef struct {
+                char* wave_name;        // Name of the sample (used to refer to it in scripts)
+                sample_t audio_signal;
+            } wave;
+
+
+READ TRACK: 
+If regex pattern ^\w*{ (lines that start with alphanumeric{) found:
+    1.  Make a new bar named by the word in front of {.
+    2.  Read (bar mode) until }. If no } found, display error message.
+If track = [bar1, bar2...] found:
+    1.  Read this into an arry or smth...
+
+
+READ BAR: 
+    1.  Read all lines between { and }, and look for wave_names.
+    2.  When wave_name found, look for [. When found:
+    3.  Look for : inside []. 
+            > If not found, read number inside [].
+            > If found, read number before and after :.
+    4.  Look for =. 
+            > If not found, use standard linear play of the full sample.
+            > If found, use a playfunction. 
+
+
+
+
+
+
+
+
+==========================================================================================
+                                        OLD SYNTAX
+==========================================================================================
+-------------------------------------------------------------------------------------------------
+*teseq example syntax, This shows an example of how a .seq file may look like
+-------------------------------------------------------------------------------------------------
+
+// Beats per minute (standard 120) and beats per bar (standard 4)
+bpm = 180;
+res = 4;    // This decides the resolution of the sequence in points per beat. Here: 4 points = 1 beat
+            // The pattern length is decided by the number of elements in the given pattern.
+
+// Load instruments / samples
+Instruments:
+    kick    = kick.wav;
+    snare   = snare.wav;
+    hat     = hat.wav;
+    clap    = clap.wav;
+
+// Make patterns / beats
+pat[1] = {
+    kick.beat   = 1000100010001000;
+    snare.beat  = 0000100000001000;
+    hat.beat    = 1010101010101010; 
+}
+pat[2]  = {
+    kick.beat   = 1010101010101010; 
+    snare.beat  = 1010101010101010;
+    hat.beat    = 1010101010101010; 
+    clap.beat   = 0000100000001000;
+}
+
+// An alternative could be to only specify the times at which samples should be triggered, but this ^ one is more visual.
+// The time trigger based approach may be useful for a sampler with more functions, like non-linear / playing of samples ("time manipulation"). Example:
+//    kick.beat   = {[0 > , 1, 2, 3}
+// At this point it is probably better to make a GUI though, and then we're talking Intermediate.
+
+// This .seq file is loaded when teseq starts, making it possible to play a seqence for instance by using the command pat[2].play or something
+-------------------------------------------------------------------------------------------------
+

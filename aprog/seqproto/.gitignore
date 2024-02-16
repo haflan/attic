@@ -1,0 +1,4 @@
+seq
+*.wav
+*.mid
+**/mid2sco
